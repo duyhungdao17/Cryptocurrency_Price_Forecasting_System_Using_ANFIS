@@ -627,8 +627,8 @@ MIT License - See LICENSE file for complete details
 
 ## ✉️ Contact & Contributions
 
-**Authors**: Đào Duy Hưng
-**Contact**: daoduyhung177@gmail.com
+**Authors**: Đào Duy Hưng  
+**Contact**: daoduyhung177@gmail.com  
 **Repository**: https://github.com/yourusername/crypto-anfis-forecasting
 
 **How to Contribute**:
