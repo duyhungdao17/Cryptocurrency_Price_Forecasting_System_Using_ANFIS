@@ -337,8 +337,8 @@ Rather than using **Random Forest Feature Selection** (which ignores multicollin
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/crypto-anfis-forecasting.git
-cd crypto-anfis-forecasting
+git clone https://github.com/duyhungdao17/Cryptocurrency_Price_Forecasting_System_Using_ANFIS.git
+cd Cryptocurrency_Price_Forecasting_System_Using_ANFIS
 
 # Create Conda environment
 conda env create -f environment.yml
@@ -629,7 +629,7 @@ MIT License - See LICENSE file for complete details
 
 **Authors**: Đào Duy Hưng  
 **Contact**: daoduyhung177@gmail.com  
-**Repository**: https://github.com/yourusername/crypto-anfis-forecasting
+**Repository**: https://github.com/duyhungdao17/Cryptocurrency_Price_Forecasting_System_Using_ANFIS
 
 **How to Contribute**:
 - Fork this repository

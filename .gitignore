@@ -1,6 +1,8 @@
 # Setup scripts
 setup_env.bat
 setup_env.ps1
+push-to-github.bat
+push-to-github.ps1
 
 # Python
 __pycache__/
