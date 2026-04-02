@@ -67,24 +67,24 @@ This system integrates **the learning power of Neural Networks** with **the know
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│            CRYPTOCURRENCY PRICE FORECASTING PIPELINE         │
+│            CRYPTOCURRENCY PRICE FORECASTING PIPELINE        │
 ├─────────────────────────────────────────────────────────────┤
-│  PHASE 1: DATA ACQUISITION & FEATURE ENGINEERING           │
-│  ├─ Binance API Data Collection (OHLCV)                    │
+│  PHASE 1: DATA ACQUISITION & FEATURE ENGINEERING            │
+│  ├─ Binance API Data Collection (OHLCV)                     │
 │  ├─ 80+ Technical Indicators Generation                     │
-│  └─ Function-Based Feature Sets (minimal, 6, 7, 8, full)  │
+│  └─ Function-Based Feature Sets (minimal, 6, 7, 8, full)    │
 ├─────────────────────────────────────────────────────────────┤
 │  PHASE 2: MODEL TRAINING & OPTIMIZATION                     │
-│  ├─ ANFIS Models (Grid Partitioning + FCM)                 │
-│  ├─ LSTM Baseline (2 layers, 64 hidden units)              │
-│  ├─ ANN Baseline ([128, 64, 32] architecture)              │
-│  └─ PSO Hyperparameter Optimization                        │
+│  ├─ ANFIS Models (Grid Partitioning + FCM)                  │
+│  ├─ LSTM Baseline (2 layers, 64 hidden units)               │
+│  ├─ ANN Baseline ([128, 64, 32] architecture)               │
+│  └─ PSO Hyperparameter Optimization                         │
 ├─────────────────────────────────────────────────────────────┤
-│  PHASE 3: EVALUATION & COMPARATIVE ANALYSIS                │
-│  ├─ Multi-Metric Evaluation: RMSE, MAE, MAPE, RMSRE, R²   │
-│  ├─ Cross-Model Performance Comparison                     │
-│  ├─ Dimensionality Impact Analysis                         │
-│  └─ Training Dynamics Visualization                        │
+│  PHASE 3: EVALUATION & COMPARATIVE ANALYSIS                 │
+│  ├─ Multi-Metric Evaluation: RMSE, MAE, MAPE, RMSRE, R²     │
+│  ├─ Cross-Model Performance Comparison                      │
+│  ├─ Dimensionality Impact Analysis                          │
+│  └─ Training Dynamics Visualization                         │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -118,7 +118,7 @@ The ANFIS model implements five layers corresponding to the standard fuzzy infer
                              ▲
           ┌──────────────────┴──────────────────┐
           │ Layer 1: Fuzzification              │ Membership Functions
-          │ Gaussian membership functions        │ μ_Ai(x) = exp(-(x-c)²/σ²)
+          │ Gaussian membership functions       │ μ_Ai(x) = exp(-(x-c)²/σ²)
           └──────────────────┬──────────────────┘
                              ▲
           ┌──────────────────┴──────────────────┐
@@ -215,15 +215,15 @@ Rather than using **Random Forest Feature Selection** (which ignores multicollin
 #### **SET_FEATURES_7 (7 Features) - BALANCED ATTEMPT** ⚠️
 
 ```
-┌──────────────┬──────────┬──────────┬───────────┬──────────────┐
-│  Model       │  RMSE    │  MAE     │  MAPE %   │  R²          │
-├──────────────┼──────────┼──────────┼───────────┼──────────────┤
-│  ANFIS-Grid  │  5.7694  │  3.3087  │ 107709.12 │ -54397.63    │
-│  ANFIS-FCM   │  0.1001  │  0.0541  │  1807.43  │  -15.39      │
+┌──────────────┬──────────┬──────────┬───────────┬───────────────┐
+│  Model       │  RMSE    │  MAE     │  MAPE %   │  R²           │
+├──────────────┼──────────┼──────────┼───────────┼───────────────┤
+│  ANFIS-Grid  │  5.7694  │  3.3087  │ 107709.12 │ -54397.63     │
+│  ANFIS-FCM   │  0.1001  │  0.0541  │  1807.43  │  -15.39       │
 │  LSTM        │  0.0314  │  0.0248  │   702.43  │  -0.6137 ✅  │
-│  ANN         │  0.2847  │  0.2456  │  9955.99  │ -131.48 ❌   │
+│  ANN         │  0.2847  │  0.2456  │  9955.99  │ -131.48 ❌    │
 │  ANFIS-PSO   │  0.0284  │  0.0218  │   529.21  │  -0.3149 ✅✅│
-└──────────────┴──────────┴──────────┴───────────┴──────────────┘
+└──────────────┴──────────┴──────────┴───────────┴───────────────┘
 
 ⚠️ Observations:
   • LSTM performance slight improvement: MAE 0.0248 vs 0.0273 (but marginal)
@@ -627,8 +627,8 @@ MIT License - See LICENSE file for complete details
 
 ## ✉️ Contact & Contributions
 
-**Authors**: AI Researchers  
-**Contact**: research@example.com  
+**Authors**: Đào Duy Hưng
+**Contact**: daoduyhung177@gmail.com
 **Repository**: https://github.com/yourusername/crypto-anfis-forecasting
 
 **How to Contribute**:
