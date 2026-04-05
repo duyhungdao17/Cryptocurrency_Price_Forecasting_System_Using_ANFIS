@@ -15,6 +15,17 @@ Chạy: python main.py
 
 import sys
 import os
+import io
+
+# Fix UnicodeEncodeError on Windows
+if sys.platform == "win32":
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding='utf-8')
+    else:
+        # Fallback for older python or non-reconfigurable streams
+        import sys
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 import argparse
 
 # Fix sys.path để import từ Crawling và Model
@@ -629,8 +640,7 @@ def main(args=None):
     
     # Setup directories
     if not args.skip_setup:
-        # setup_directories() 
-        pass
+        setup_directories() 
     else:
         print("Skipping directory setup")
 

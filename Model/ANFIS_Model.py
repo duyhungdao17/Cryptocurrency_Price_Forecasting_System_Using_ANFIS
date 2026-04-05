@@ -144,7 +144,7 @@ class FuzzyCMeans:
 
             # Kiểm tra hội tụ
             if np.max(np.abs(U - U_old)) < self.tol:
-                print(f"  [FCM] Hội tụ sau {iteration + 1} vòng lặp")
+                print(f"  [FCM] Converged after {iteration + 1} iterations")
                 break
 
         self.centers_ = centers     # (C, n_features)
@@ -330,7 +330,7 @@ class ANFIS(nn.Module):
             requires_grad=False   # LSE cập nhật, không cần gradient
         )
 
-        print(f"\n[ANFIS] Khởi tạo:")
+        print(f"\n[ANFIS] Initialization:")
         print(f"  Clustering  : {clustering}")
         print(f"  n_inputs    : {n_inputs}")
         print(f"  n_mf/input  : {actual_n_mf}")

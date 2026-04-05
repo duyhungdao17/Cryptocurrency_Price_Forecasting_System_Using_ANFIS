@@ -42,7 +42,7 @@ def fetch_binance_klines(symbol: str, interval: str,
     all_data = []
     current_start = start_ts
  
-    print(f"[INFO] Bắt đầu crawl {symbol} từ {start_str} ...")
+    print(f"[INFO] Starting crawl {symbol} from {start_str} ...")
  
     while current_start < end_ts:
         params = {
@@ -58,7 +58,7 @@ def fetch_binance_klines(symbol: str, interval: str,
             response.raise_for_status()
             data = response.json()
         except requests.RequestException as e:
-            print(f"[ERROR] Request thất bại: {e}. Thử lại sau 5s...")
+            print(f"[ERROR] Request failed: {e}. Retrying in 5s...")
             time.sleep(5)
             continue
  
@@ -71,14 +71,14 @@ def fetch_binance_klines(symbol: str, interval: str,
         last_close_time = data[-1][6]       # close_time của nến cuối
         current_start   = last_close_time + 1
  
-        print(f"  → Đã lấy {len(all_data):,} nến | "
-              f"Đến: {pd.Timestamp(data[-1][0], unit='ms').date()}")
+        print(f"  -> Fetched {len(all_data):,} candles | "
+              f"To: {pd.Timestamp(data[-1][0], unit='ms').date()}")
  
         # Tránh rate limit của Binance
         time.sleep(0.3)
  
     df = pd.DataFrame(all_data, columns=COLUMNS)
-    print(f"[DONE] Tổng cộng: {len(df):,} nến cho {symbol}\n")
+    print(f"[DONE] Total: {len(df):,} candles for {symbol}\n")
     return df
  
  
@@ -115,7 +115,7 @@ def clean_raw_data(df: pd.DataFrame, symbol: str) -> pd.DataFrame:
     df = df[~df.index.duplicated(keep="first")].sort_index()
  
     print(f"[CLEAN] {symbol}: {len(df):,} rows | "
-          f"{df.index.min().date()} → {df.index.max().date()}")
+          f"{df.index.min().date()} -> {df.index.max().date()}")
     return df
  
  
@@ -376,11 +376,11 @@ def create_feature_sets(df: pd.DataFrame) -> dict:
     for name, cols in result.items():
         tag = ""
         if name == "minimal":
-            tag = "← Quick test"
+            tag = "<- Quick test"
         elif name == "set_features_6":
-            tag = "← ANFIS khuyến nghị"
+            tag = "<- ANFIS recommended"
         elif name == "full":
-            tag = "← LSTM/ANN only"
+            tag = "<- LSTM/ANN only"
         print(f"  {name:16s}: {len(cols):3d} features  {tag}")
  
     return result
@@ -559,7 +559,7 @@ def prepare_dataset(df: pd.DataFrame,
     print(f"\n[SPLIT] Temporal Split:")
     for split, (s, e) in split_dates.items():
         size = {"train": len(X_train), "val": len(X_val), "test": len(X_test)}[split]
-        print(f"  {split:5s}: {s} → {e} | {size:,} samples")
+        print(f"  {split:5s}: {s} -> {e} | {size:,} samples")
     print(f"  Features: {len(feature_cols)}")
  
     return (X_train, X_val, X_test,
