@@ -3,7 +3,6 @@ setup_env.bat
 setup_env.ps1
 push-to-github.bat
 push-to-github.ps1
-environment.yml
 
 # Python
 __pycache__/
