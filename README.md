@@ -206,7 +206,7 @@ Rather than using **Random Forest Feature Selection** (which ignores multicollin
 └──────────────┴──────────┴──────────┴───────────┴──────────────┘
 
 ✅ Key Findings:
-  • LSTM achieves best MAE: 0.0273 USD (99.7% more accurate than ANFIS-FCM)
+  • LSTM achieves best MAE: 0.0273 log_return (99.7% more accurate than ANFIS-FCM)
   • ANFIS-PSO improves upon FCM: MAPE reduced from 5316% to 318% (16.7× improvement)
   • Balanced performance across models indicates good feature engineering
   • R² values near -1 indicate moderate predictability (expected for crypto)
